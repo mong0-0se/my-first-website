@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MATHEASE</title>
+
+    <style>
+      body {
+        font-family: That Sounds Great;
+        background: linear-gradient(to right, #c7f6d5, #6b9fe7);
+        height: 100vh;
+        overflow-x: hidden;
+        text-align: center;
+        margin: 0;
+      }
+
+      .top_img {
+        position: absolute;
+        top: 0;
+        left: 35%;
+        width: 30%;
+      }
+
+      .bottom_img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 50px;
+        width: 100%;
+      }
+
+      .welcome {
+        position: absolute;
+        top: 30%;
+        width: 100%;
+        color: #002147;
+      }
+
+      .welcome h1 {
+        font-size: 100px;
+        font-weight: bolder;
+        margin: 0px;
+      }
+      .welcome p {
+        background-color: #002147;
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 8px;
+        font-size: 1.5rem;
+        color: #ffffff;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      .container {
+        margin-top: 150vh;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+        background-color: #ffffff;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .problem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        background: linear-gradient(to right, #c7f6d5, #6b9fe7);
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+      }
+
+      .problem input {
+        flex: 1;
+        padding: 15px;
+        font-size: 18px;
+        border: 2px solid #2196f3;
+        border-radius: 10px;
+        min-width: 200px;
+      }
+
+      .btn {
+        background: #1976d2;
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: #0d47a1;
+      }
+
+      .mdas {
+        width: 70%;
+        margin-top: 30vh;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        gap: 20px;
+        width: 90%;
+        margin-top: 0vh;
+        margin-left: 7vh;
+      }
+
+      .card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 25px 15px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        transition: 0.1s;
+        border: 3px solid #e1f5fe;
+        color: white;
+        height: 50vh;
+      }
+
+      .card:hover {
+        transform: scale(1.1);
+      }
+
+      .addition {
+        background: #002147;
+      }
+
+      .subtraction {
+        background: #002147;
+      }
+
+      .multiplication {
+        background: #002147;
+      }
+
+      .division {
+        background: #002147;
+      }
+      .flip-container {
+        perspective: 1000px;
+        width: 100%;
+        height: 100%;
+      }
+
+      .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+
+      .flip-container:active .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 50vh;
+        border-radius: 16px;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+        padding: 25px 15px;
+        color: white;
+      }
+
+      .card-back {
+        background-color: #ffffff;
+        color: #002147;
+        transform: rotateY(180deg);
+      }
+
+      .numbers {
+        width: 60%;
+        margin-top: 70vh;
+        margin-left: 0%;
+        position: absolute;
+        margin-bottom: 0vh;
+      }
+
+      .web h1 {
+        width: 70%;
+        margin-top: 70vh;
+        position: absolute;
+        text-align: justify;
+        font-size: 6vh;
+        margin-left: 10%;
+        margin-right: 80%;
+        font-weight: bolder;
+      }
+
+      .container1 {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 70%;
+        margin-bottom: 0%;
+        background-color: #002147;
+        color: white;
+        padding: 40px 20px 20px;
+        width: 100%;
+      }
+
+      .container1 h1 {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 32px;
+      }
+
+      .container1 .dis {
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+        gap: 20px;
+        padding: 10px 0;
+        width: 93%;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        border-bottom: 2px solid #ffffff33;
+        padding-bottom: 5px;
+      }
+
+      .footer-section dd,
+      .footer-section p {
+        margin: 5px 0;
+        font-size: 14px;
+        text-align: justify;
+        padding-left: 10vh;
+        padding-right: 10vh;
+      }
+
+      .footer {
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        padding: 15px;
+        background-color: #bbdefb;
+        font-size: 14px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="zxc.png" alt="top design" class="top_img" />
+
+    <div class="welcome">
+      <h1>
+        WELCOME TO <br />
+        MATHEASE
+      </h1>
+      <p>Master Math With Ease!</p>
+    </div>
+
+    <img src="qwerty.png" alt="bottom design" class="bottom_img" />
+
+    <div class="container">
+      <h2>Here, you can type in any math problem that uses MDAS.</h2>
+      <div class="problem">
+        <input type="text" placeholder="Try: 5 + 6 × 2" />
+        <button class="btn">Solve</button>
+      </div>
+    </div>
+
+    <h1 class="mdas">
+      Here at MathEase, we make math easier by teaching you how to solve
+      problems using MDAS — that means...
+    </h1>
+
+    <div class="grid">
+      <div class="flip-container">
+        <div class="card-inner">
+          <div class="card multiplication card-front">
+            <img src="multiply.png" alt="" style="width: 40vh" /><br />Multiply
+          </div>
+          <div
+            class="card card-back"
+            style="font-family: Arial, Helvetica, sans-serif"
+          >
+            Multiply means repeated addition! <br />
+            <br />
+            Whenever you see multiplication, solve it before anything else.
+            <br />Example: 3 + 4 × 2 <br />
+            Start with 4 × 2 = 8 <br />Now the problem becomes: <br />
+            3 + 8 = 11
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-container">
+        <div class="card-inner">
+          <div class="card division card-front">
+            <img src="divide.png" alt="" style="width: 40vh" /><br />Divide
+          </div>
+          <div
+            class="card card-back"
+            style="font-family: Arial, Helvetica, sans-serif"
+          >
+            Divide is sharing or grouping equally! <br /><br />
+            Do division right after multiplication. <br />
+            Example: 12 ÷ 3 + 2 <br />
+            Start with 12 ÷ 3 = 4 <br />Now the problem becomes: <br />
+            4 + 2 = 6
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-container">
+        <div class="card-inner">
+          <div class="card addition card-front">
+            <img src="plus.png" alt="" style="width: 40vh" /><br />Add
+          </div>
+          <div
+            class="card card-back"
+            style="font-family: Arial, Helvetica, sans-serif"
+          >
+            Add means putting numbers together! <br /><br />
+            Addition comes after all multiplication and division are done.
+            <br />
+            Example: 4 + 3 = 7
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-container">
+        <div class="card-inner">
+          <div class="card subtraction card-front">
+            <img src="minus.png" alt="" style="width: 40vh" /><br />Subtract
+          </div>
+          <div
+            class="card card-back"
+            style="font-family: Arial, Helvetica, sans-serif"
+          >
+            Subtract means taking away! <br /><br />
+            Subtraction is the last step. <br />
+            Example: 10 - 2 = 8
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="web">
+      <h1>
+        This website is perfect for kids. <br />Whether you're practicing for
+        school or just want to try math for fun <br />— you're in the right
+        place!
+      </h1>
+    </div>
+
+    <img src="qwe-removebg-preview.png" alt="bottom design" class="numbers" />
+
+    <div class="container1">
+      <h1>MathEASE</h1>
+      <div class="dis">
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <p>
+            &nbsp;&nbsp;&nbsp;<img
+              src="fb.png"
+              alt=""
+              style="width: 2vh"
+            />&nbsp;&nbsp;&nbsp;Facebook
+            <br />
+            &nbsp;&nbsp;&nbsp;<img
+              src="twit.png"
+              alt=""
+              style="width: 2vh"
+            />&nbsp;&nbsp;&nbsp;Twitter
+            <br />
+            &nbsp;&nbsp;&nbsp;<img
+              src="pin.png"
+              alt=""
+              style="width: 2vh"
+            />&nbsp;&nbsp;&nbsp;Pinterest
+            <br />
+            &nbsp;&nbsp;&nbsp;<img
+              src="insta.png"
+              alt=""
+              style="width: 2vh"
+            />&nbsp;&nbsp;&nbsp;Instagram <br />
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            MathEase is a fun, interactive platform to help kids learn math
+            easily through games and quizzes.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>
+            Email: support@mathease.com <br />
+            Phone: (123) 456-7890
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Developers</h3>
+          <p>
+            Team MathEase <br />
+            PHINMA Cagayan de Oro College
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">&copy; 2025 MathEASE. All rights reserved.</div>
+  </body>
+</html>

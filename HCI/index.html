@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MathEase</title>
+    <script src="https://kit.fontawesome.com/fd38c93447.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: That Sounds Great;
+      }
+
+      .header {
+        background-color: #6c89f4;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 40px;
+        color: white;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .logo img {
+        width: 40px;
+        margin-right: 10px;
+      }
+
+      .logo span {
+        font-size: 26px;
+        font-weight: bold;
+        text-shadow: 2px 2px #00000030;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        font-weight: bold;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #ffcc70;
+      }
+
+      .signup-btn {
+        background-color: #ff823c;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .signup-btn:hover {
+        background-color: #ff9b60;
+      }
+      iframe {
+        width: 100%;
+        height: 88.5vh;
+        border: 1px solid #6c89f4;
+        margin-top: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <i class="fa-solid fa-calculator fa-bounce" style="color: #ffffff"></i>
+        <span>MathEase</span>
+      </div>
+      <nav class="nav-links">
+        <a href="home.html" target="display">HOME</a>
+        <a href="games.html" target="display">GAMES</a>
+        <a href="quiz.html" target="display">QUIZ</a>
+        <a href="login.html" target="display">LOGIN</a>
+        <a href="about.html" target="display">ABOUT US</a>
+        <a href="signin.html" class="signup-btn" target="display">SIGN UP</a>
+      </nav>
+    </header>
+
+    <iframe name="display" src="home.html" frameborder="1px"></iframe>
+  </body>
+</html>

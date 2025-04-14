@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: cursive;
+        background: linear-gradient(to right, #c7f6d5, #6b9fe7);
+        height: 100vh;
+        overflow-x: hidden;
+        text-align: center;
+        margin: 0;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        gap: 60px;
+        padding: 30px;
+        max-width: 1200px;
+        margin: auto;
+        margin-left: 5%;
+      }
+
+      .grid-item {
+        background-color: #002147;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        height: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .grid-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .footer {
+        font-family: That Sounds Great;
+        text-align: center;
+        padding: 15px;
+        background-color: #bbdefb;
+        font-size: 14px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="mathheader.png" alt="image" style="width: 100%" />
+
+    <p
+      style="
+        font-size: 24px;
+        font-weight: bold;
+        color: #002147;
+        margin: 30px auto;
+        max-width: 80%;
+        background-color: #ffffffcc;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      "
+    >
+      These games can help kids build their skills in Addition, Subtraction,
+      Multiplication, and Division. They make learning math fun and easy while
+      guiding them in their MDAS journey!
+    </p>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <img src="1.jpg" alt="games" style="border: 1px solid white" />
+      </div>
+      <div class="grid-item">
+        <img src="2.jpg" alt="games" style="border: 1px solid white" />
+      </div>
+      <div class="grid-item">
+        <img src="3.jpg" alt="games" style="border: 1px solid white" />
+      </div>
+      <div class="grid-item">
+        <img src="4.jpg" alt="games" style="border: 1px solid white" />
+      </div>
+      <div class="grid-item">
+        <img src="5.jpg" alt="games" style="border: 1px solid white" />
+      </div>
+      <div class="grid-item">
+        <img src="6.jpg" alt="games" style="border: 1px solid white" />
+      </div>
+    </div>
+
+    <div class="footer">&copy; 2025 MathEASE. All rights reserved.</div>
+  </body>
+</html>
